@@ -1,0 +1,22 @@
+{
+  "name": "Badger Dash",
+  "short_name": "Badger Dash",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ed3124",
+  "theme_color": "#ed3124",
+  "scope": ".",
+  "description": "The future is now.",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
