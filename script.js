@@ -42,6 +42,7 @@ function loadCircles() {
     filter: blur(15px);
     background: #ed3124;
     `;
+  loadingscreen.appendChild(x);
 };
 loadCircles();
 loadCircles();
