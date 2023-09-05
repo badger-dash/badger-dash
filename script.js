@@ -1,3 +1,7 @@
+var loadingscreen = document.getElementById("loading-screen");
+var beforeInstallPrompt;
+
+//FOR WEB APP INSTALL
 window.addEventListener("load", () => {
   registerSW();
 });
@@ -10,7 +14,7 @@ async function registerSW() {
     }
   }
 }
-var beforeInstallPrompt = null;
+beforeInstallPrompt = null;
 window.addEventListener("beforeinstallprompt", eventHandler, errorHandler);
 function eventHandler(event) {
   beforeInstallPrompt = event;
@@ -21,3 +25,28 @@ function errorHandler(event) {
 function install() {
   if (beforeInstallPrompt) beforeInstallPrompt.prompt();
 }
+
+//FOR LOADING SCREEN BACKGROUND
+function loadCircles() {
+  var x = document.createElement("div");
+  var size = (Math.floor(Math.random() * 150)) + 50;
+  x.style = `
+    position: absolute;
+    top: ${Math.random() * window.innerHeight}px;
+    left: ${Math.random() * window.innerWidth}px;
+    height: ${size}px;
+    width: ${size}px;
+    border-radius: 50%;
+    opacity: ${Math.random() * 0.5}; 
+    z-index: -1;
+    filter: blur(15px);
+    background: #ed3124;
+    `;
+};
+loadCircles();
+loadCircles();
+loadCircles();
+loadCircles();
+loadCircles();
+
+
