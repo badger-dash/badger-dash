@@ -44,10 +44,8 @@ function loadCircles() {
     `;
   loadingscreen.appendChild(x);
 };
-loadCircles();
-loadCircles();
-loadCircles();
-loadCircles();
-loadCircles();
+for (let i = 0; i < 20; i++) {
+  loadCircles();
+}
 
 
