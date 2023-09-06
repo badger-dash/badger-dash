@@ -29,7 +29,7 @@ function install() {
 //FOR LOADING SCREEN BACKGROUND
 function loadCircles() {
   var x = document.createElement("div");
-  var size = (Math.floor(Math.random() * 150)) + 50;
+  var size = Math.floor(Math.random() * 150) + 50;
   x.style = `
     position: absolute;
     top: ${Math.random() * window.innerHeight}px;
@@ -43,9 +43,7 @@ function loadCircles() {
     background: #ed3124;
     `;
   loadingscreen.appendChild(x);
-};
+}
 for (let i = 0; i < 20; i++) {
   loadCircles();
 }
-
-
