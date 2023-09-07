@@ -1,5 +1,13 @@
 var loadingscreen = document.getElementById("loading-screen");
+var startscreen = document.getElementById("start");
+var orderscreen = document.getElementById("order");
+var deliverscreen = document.getElementById("deliver");
+
 var beforeInstallPrompt;
+var price;
+var userLocation;
+var allowedLocation;
+var pages = document.getElementsByClassName("page");
 
 //FOR WEB APP INSTALL
 window.addEventListener("load", () => {
@@ -46,4 +54,35 @@ function loadCircles() {
 }
 for (let i = 0; i < 20; i++) {
   loadCircles();
+}
+
+function calculateCost(distance) {
+  price = (100 * Math.round(100 * (distance * 4 + 0.35))) / 100;
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("Badger Dash requires location access to work");
+  }
+}
+function showPosition(position) {
+  userLocation = {
+    lat: `Latitude: ${position.coords.latitude}`,
+    long: `Longitude: ${position.coords.longitude}`,
+  };
+}
+
+setInterval(function() {
+  if (allowedLocation === true) {
+    getLocation();
+  }
+}, 5000);
+
+function displayPage(elmnt) {
+  for (let i = 0; i < pages.length; i++) {
+    pages[i].style.visibility = "hidden";
+  }
+  elmnt.style.visibility = "visible";
 }

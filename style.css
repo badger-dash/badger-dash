@@ -1,6 +1,21 @@
 * {
   font-family: "IBM Plex Sans", sans-serif;
 }
+input {
+  user-select: auto;
+  -webkit-user-select: auto;
+  border: none;
+  border-bottom: 1px solid grey;
+  background: rgba(0, 0, 0, 0.01);
+  font-size: 23px;
+  color: #ed3124;
+  width: 90%;
+  margin: 25px 5%;
+}
+input::placeholder {
+  color: grey;
+  font-size: 20px;
+}
 .button {
   background: #ed3124;
   height: 50px;
@@ -33,6 +48,10 @@
 .red {
   color: #ed3124;
 }
+.wide {
+  width: 90%;
+  margin: 25px 5%;
+}
 
 .page {
   position: fixed;
@@ -43,6 +62,7 @@
   background: #f5e7e6;
   overflow-x: auto;
   overflow-y: none;
+  visibility: hidden;
 }
 
 .menu {
@@ -108,4 +128,9 @@
   background: #ed3124;
   overflow: hidden;
   z-index: 999;
+}
+
+#start {
+  text-align: center;
+  visibility: visible;
 }
