@@ -63,8 +63,10 @@ function calculateCost(distance) {
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+    allowedLocation = true;
   } else {
     alert("Badger Dash requires location access to work");
+    allowedLocation = false;
   }
 }
 function showPosition(position) {
@@ -85,4 +87,16 @@ function displayPage(elmnt) {
     pages[i].style.visibility = "hidden";
   }
   elmnt.style.visibility = "visible";
+}
+
+function continueOn() {
+  setTimeout(function() {
+  if (allowedLocation === true) {
+    displayPage(loadingscreen);
+    console.log(userLocation.lat + " - " + userLocation.long);
+  } else {
+    alert("Badger Dash requires location access to work");
+    console.log("Location access denied.");
+  }
+}, 100);
 }

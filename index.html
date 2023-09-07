@@ -33,27 +33,39 @@
     </div>
 
     <div class="page" id="start">
-      <h1>Register for Badger Dash</h1>
-      <input type="text" placeholder="Enter your name" />
-      <p>
-        *Clicking continue will allow Badger Dash to access your location and
-        phone number.
-      </p>
-      <button
-        class="button wide"
-        onclick="getLocation(); allowedLocation=true;"
-      >
-        Continue
-      </button>
+      <div style="margin-top: 250px;">
+        <h1>Register for Badger Dash</h1>
+        <input type="text" placeholder="Enter your name" autocomplete="off" onload="this.focus()"/>
+        <br><br>
+        <input type="text" placeholder="Enter your phone number" autocomplete="off"/>
+        <p style="font-size:20px;color:grey;">
+          *Clicking continue will allow Badger Dash to access your location and
+          phone number.
+        </p>
+        <button
+          class="button wide"
+          onclick="getLocation();continueOn();"
+        >
+          Continue
+        </button>
+      </div>
     </div>
 
     <div class="page" style="overflow: hidden" id="loading-screen">
       <div id="options">
         <h1 class="red">The future is now.</h1>
-        <button class="left button" title="Order food" onclick="displayPage(orderscreen)">
+        <button
+          class="left button"
+          title="Order food"
+          onclick="displayPage(orderscreen)"
+        >
           <span class="material-icons">restaurant</span> Order food
         </button>
-        <button class="right button" title="Deliver food" onclick="displayPage(deliverscreen)">
+        <button
+          class="right button"
+          title="Deliver food"
+          onclick="displayPage(deliverscreen)"
+        >
           <span class="material-icons">outgoing_mail</span> Deliver
         </button>
       </div>
@@ -62,6 +74,22 @@
     <div class="page" id="order"></div>
 
     <div class="page" id="deliver"></div>
+    <!-- firebase thing -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyA2btv59Uo0nt6-w31jFDtcvI6aJi2Uq1I",
+        authDomain: "badger-dash.firebaseapp.com",
+        projectId: "badger-dash",
+        storageBucket: "badger-dash.appspot.com",
+        messagingSenderId: "723467901389",
+        appId: "1:723467901389:web:bf6119ec89b0cdca6acc84",
+        measurementId: "G-VD2V766M7C",
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

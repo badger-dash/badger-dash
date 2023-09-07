@@ -5,11 +5,12 @@ input {
   user-select: auto;
   -webkit-user-select: auto;
   border: none;
-  border-bottom: 1px solid grey;
-  background: rgba(0, 0, 0, 0.01);
+  border-bottom: 1px solid #ed3124;
+  background: transparent;
   font-size: 23px;
   color: #ed3124;
   width: 90%;
+  height: 50px;
   margin: 25px 5%;
 }
 input::placeholder {
