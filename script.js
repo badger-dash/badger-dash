@@ -71,8 +71,8 @@ function getLocation() {
 }
 function showPosition(position) {
   userLocation = {
-    lat: `Latitude: ${position.coords.latitude}`,
-    long: `Longitude: ${position.coords.longitude}`,
+    latitudeCoord: `Latitude: ${position.coords.latitude}`,
+    longitudeCoord: `Longitude: ${position.coords.longitude}`,
   };
 }
 
@@ -93,7 +93,7 @@ function continueOn() {
   setTimeout(function() {
   if (allowedLocation === true) {
     displayPage(loadingscreen);
-    console.log(userLocation.lat + " - " + userLocation.long);
+    console.log(userLocation);
   } else {
     alert("Badger Dash requires location access to work");
     console.log("Location access denied.");
