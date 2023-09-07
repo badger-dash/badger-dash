@@ -12,6 +12,7 @@ input {
   width: 90%;
   height: 50px;
   margin: 25px 5%;
+  outline: none;
 }
 input::placeholder {
   color: grey;
